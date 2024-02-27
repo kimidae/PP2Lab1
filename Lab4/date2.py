@@ -1,4 +1,7 @@
 import datetime
 today=datetime.datetime.now()
-print ("Today: ", today.strftime("%Y/%m/%d %H:%M:S"))
+tomorrow= today + datetime.timedelta(days=1)
+yesterday= today - datetime.timedelta(days=1)
+print ("Yesterday: ", yesterday.strftime("%Y/%m/%d"))
+print ("Today: ", today.strftime("%Y/%m/%d"))
 print ("Tomorrow: ", tomorrow.strftime("%Y/%m/%d"))
