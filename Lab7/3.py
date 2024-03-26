@@ -26,6 +26,7 @@ sprite_go_left2 = pygame.image.load("sprite_go_left2.png")
 sprite_up = pygame.image.load("sprite_up.png")
 sprite_go_up1 = pygame.image.load("sprite_go_up1.png")
 sprite_go_up2 = pygame.image.load("sprite_go_up2.png")
+background2 = pygame.image.load("bgsprite2.png")
 background = pygame.image.load("bgsprite.png")
 
 sprite_down = pygame.transform.scale(sprite_down, (sprite_down.get_width() * 2, sprite_down.get_height() * 2))
@@ -49,8 +50,6 @@ key_left_pressed = False
 key_up_pressed = False
 key_down_pressed = False
 
-CHANGE_SPRITE_EVENT = pygame.USEREVENT + 1
-pygame.time.set_timer(CHANGE_SPRITE_EVENT, 150) 
 
 clock = pygame.time.Clock()
 screen.blit(background, (0, 0))
@@ -99,11 +98,11 @@ while not done:
         image_rect = image.get_rect(topleft=(x, y))
         if image_rect.x < 800 - image.get_width():
             x += speed
-        if pygame.time.get_ticks() % 300 < 75:
+        if pygame.time.get_ticks() % 600 < 150:
             image = sprite_go_right1
-        elif pygame.time.get_ticks() % 300 < 150:
+        elif pygame.time.get_ticks() % 600 < 300:
             image = sprite_right
-        elif pygame.time.get_ticks() % 300 < 225:
+        elif pygame.time.get_ticks() % 600 < 450:
             image = sprite_go_right2
         else:
             image = sprite_right
@@ -111,11 +110,11 @@ while not done:
         image_rect = image.get_rect(topleft=(x, y))
         if image_rect.x > 0:
             x -= speed
-        if pygame.time.get_ticks() % 300 < 75:
+        if pygame.time.get_ticks() % 600 < 150:
             image = sprite_go_left1
-        elif pygame.time.get_ticks() % 300 < 150:
+        elif pygame.time.get_ticks() % 600 < 300:
             image = sprite_left
-        elif pygame.time.get_ticks() % 300 < 225:
+        elif pygame.time.get_ticks() % 600 < 450:
             image = sprite_go_left2
         else:
             image = sprite_left
@@ -123,11 +122,11 @@ while not done:
         image_rect = image.get_rect(topleft=(x, y))
         if image_rect.y > 0:
             y -= speed
-        if pygame.time.get_ticks() % 300 < 75:
+        if pygame.time.get_ticks() % 600 < 150:
             image = sprite_go_up1
-        elif pygame.time.get_ticks() % 300 < 150:
+        elif pygame.time.get_ticks() % 600 < 300:
             image = sprite_up
-        elif pygame.time.get_ticks() % 300 < 225:
+        elif pygame.time.get_ticks() % 600 < 450:
             image = sprite_go_up2
         else:
             image = sprite_up
@@ -135,15 +134,19 @@ while not done:
         image_rect = image.get_rect(topleft=(x, y))
         if image_rect.y < 600 - image.get_height():
             y += speed
-        if pygame.time.get_ticks() % 300 < 75:
+        if pygame.time.get_ticks() % 600 < 150:
             image = sprite_go_down1
-        elif pygame.time.get_ticks() % 300 < 150:
+        elif pygame.time.get_ticks() % 600 < 300:
             image = sprite_down
-        elif pygame.time.get_ticks() % 300 < 225:
+        elif pygame.time.get_ticks() % 600 < 450:
             image = sprite_go_down2
         else:
             image = sprite_down
-    screen.blit(background, (0, 0))
+    
+    if pygame.time.get_ticks() % 1000 < 500:
+        screen.blit(background, (0, 0))
+    else:
+        screen.blit(background2, (0, 0))
     
     screen.blit(image, (x, y))
 
