@@ -96,7 +96,8 @@ class Snake:
             LEVEL=1 + int(SCORE/3)
             FOOD_X=random.randint(0,19)
             FOOD_Y=random.randint(0, 19)
-            self.body.append(Point(head.x, head.y))
+            for i in range (0, random.randint(1, 3)):
+                self.body.append(Point(head.x, head.y))
 
         return LEVEL, SCORE, FOOD_X, FOOD_Y
 
@@ -145,3 +146,5 @@ while not done:
     screen.blit(level, (450,10))
     pygame.display.flip()
     clock.tick(5+ LEVEL)
+    
+    
