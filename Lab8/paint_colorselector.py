@@ -27,7 +27,6 @@ while not done:
         if event.type == pygame.KEYDOWN:
             if event.key==pygame.K_1:
                 COLOR=colorBLACK
-                print("YOUR COLOR IS BLACK")
             if event.key==pygame.K_2:
                 COLOR=colorRED
             if event.key==pygame.K_3:

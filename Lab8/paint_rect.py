@@ -1,5 +1,4 @@
 import pygame
-from sys import *
 
 pygame.init()
 

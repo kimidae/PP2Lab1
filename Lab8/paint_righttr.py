@@ -49,9 +49,9 @@ while not done:
             print("LMB released!")
             LMBpressed = False
             endX, endY = pygame.mouse.get_pos()
+            pygame.draw.line(screen, colorRED, (startX, startY), (endX, endY), THICKNESS)
+            pygame.draw.line(screen, colorRED, (startX, startY), (startX, endY), THICKNESS)
             pygame.draw.line(screen, colorRED, (startX, endY), (endX, endY), THICKNESS)
-            pygame.draw.line(screen, colorRED, (startX, startY), ((endX+startX)/2, endY), THICKNESS)
-            pygame.draw.line(screen, colorRED, ((endX+startX)/2, endY), (endX, startY), THICKNESS)
             base_layer.blit(screen, (0, 0))
 
         if event.type == pygame.KEYDOWN:
