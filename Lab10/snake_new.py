@@ -4,6 +4,14 @@ from color_palette import *
 import random
 import time
 
+colorWHITE = (255, 255, 255)
+colorGRAY = (200, 200, 200)
+colorBLACK = (0, 0, 0)
+colorRED = (255, 0, 0)
+colorGREEN = (0, 255, 0)
+colorBLUE = (0, 0, 255)
+colorYELLOW = (255, 255, 0)
+
 newusername= input("Your username:  ")
 print("To stop and save the game - press 's' key")
 
